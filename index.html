@@ -1,81 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta charset="UTF-8">
     <title>Puls Studio</title>
+    <link rel="stylesheet" href="style.css">
   </head>
-  <body style="background-color: black;">
-    <h1>Puls Studio</h1>
-    <p>Please fill out the following form:</p>
-    <form>
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name"><br><br>
-      
-      <label for="surname">Surname:</label>
-      <input type="text" id="surname" name="surname"><br><br>
-      
-      <label for="birthday">Birthday:</label>
-      <input type="date" id="birthday" name="birthday"><br><br>
-      
-      <label for="gender">Gender:</label>
-      <input type="radio" id="male" name="gender" value="male">
-      <label for="male">Male</label>
-      <input type="radio" id="female" name="gender" value="female">
-      <label for="female">Female</label><br><br>
-      
-      <label for="location">Location of building:</label>
-      <select id="location" name="location">
-        <option value="tirana">Tirana</option>
-        <option value="durres">Durres</option>
-        <option value="vlore">Vlore</option>
-        <option value="shkoder">Shkoder</option>
-        <option value="other">Other</option>
-      </select><br><br>
-      
-      <label for="building-type">Building Type:</label>
-      <select id="building-type" name="building-type">
-        <option value="residential">Residential</option>
-        <option value="commercial">Commercial</option>
-        <option value="institutional">Institutional</option>
-        <option value="industrial">Industrial</option>
-        <option value="other">Other</option>
-      </select><br><br>
-      
-      <label for="budget">Budget for building:</label>
-      <select id="budget" name="budget">
-        <option value="1000">1000 euro</option>
-        <option value="2000">2000 euro</option>
-        <option value="5000">5000 euro</option>
-        <option value="10000">10000 euro</option>
-        <option value="50000">50000 euro</option>
-        <option value="100000">100000 euro</option>
-        <option value="400000">400000 euro</option>
-        <option value="more">More than 400000 euro</option>
-      </select><br><br>
-      
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email"><br><br>
-      
-      <label for="phone">Phone number:</label>
-      <input type="tel" id="phone" name="phone"><br><br>
-      
-      <label for="instagram">Instagram:</label>
-      <input type="text" id="instagram" name="instagram"><br><br>
-      
-      <input type="submit" value="Submit">
-    </form>
+  <body>
+    <header>
+      <h1>Puls Studio</h1>
+      <nav>
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
     
-    <br><br>
-    <p>Contact us:</p>
-    <ul>
-      <li>Email: pulsbuilds@gmail.com</li>
-      <li>Phone: +355696727588</li>
-      <li>Instagram: <a href="https://www.instagram.com/puls
-            </ul>
-</div>
-
-<div class="footer">
-  <p>© 2023 Puls Studio. All Rights Reserved.</p>
-</div>
+    <main>
+      <section id="services">
+        <h2>Our Services</h2>
+        <p>We offer architectural design services for a variety of building types, including:</p>
+        <ul>
+          <li>Residential</li>
+          <li>Commercial</li>
+          <li>Industrial</li>
+          <li>Institutional</li>
+        </ul>
+        <p>Please fill out the form below to tell us more about your project needs:</p>
+        <form action="mailto:pulsbuilds@gmail.com" method="post" enctype="text/plain">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+          <label for="building-type">Building Type:</label>
+          <select id="building-type" name="building-type" required>
+            <option value="" disabled selected>Select a building type...</option>
+            <option value="residential">Residential</option>
+            <option value="commercial">Commercial</option>
+            <option value="industrial">Industrial</option>
+            <option value="institutional">Institutional</option>
+          </select>
+          <label for="budget">Budget:</label>
+          <input type="number" id="budget" name="budget" min="0" required>
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="5"></textarea>
+          <button type="submit">Send</button>
+        </form>
+      </section>
+      
+      <section id="contact">
+        <h2>Contact Us</h2>
+        <p>If you have any questions or would like to schedule a consultation, please email us at <a href="mailto:pulsbuilds@gmail.com">pulsbuilds@gmail.com</a>.</p>
+      </section>
+    </main>
+    
+    <footer>
+      <p>&copy; Puls Studio 2023</p>
+    </footer>
   </body>
 </html>

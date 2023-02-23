@@ -2,7 +2,7 @@
 const form = document.querySelector('form');
 
 // Add event listener for form submission
-form.addEventListener('submit', (e) => {
+form.addEventListener('submit', function(e) {
   e.preventDefault(); // Prevent the form from submitting normally
 
   // Get form field values
@@ -17,8 +17,8 @@ form.addEventListener('submit', (e) => {
   // Send form data to email address
   const email = 'pulsbuilds@gmail.com';
   const subject = 'New building project inquiry';
-  const body = `Name: ${name}\nSurname: ${surname}\nBirthday: ${birthday}\nGender: ${gender}\nLocation: ${location}\nBuilding type: ${buildingType}\nBudget: ${budget}`;
-  window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+  const body = 'Name: ' + name + '\n' + 'Surname: ' + surname + '\n' + 'Birthday: ' + birthday + '\n' + 'Gender: ' + gender + '\n' + 'Location: ' + location + '\n' + 'Building type: ' + buildingType + '\n' + 'Budget: ' + budget;
+  window.location.href = 'mailto:' + email + '?subject=' + subject + '&body=' + encodeURIComponent(body);
 
   // Display confirmation message
   const confirmationMsg = document.getElementById('confirmation-msg');
